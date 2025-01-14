@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
+    <title>Biodata Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         *,
         *::before,
@@ -16,7 +17,6 @@
             margin: 0;
             height: 100%;
             background: white;
-            overflow: hidden;
         }
 
         #scene {
@@ -170,51 +170,295 @@
             z-index: -1;
             opacity: 0.5;
         }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: white;
+        }
+
+        .hello-section {
+            height: 50vh;
+            background: white;
+            overflow: hidden;
+        }
+
+        .profile-section {
+            min-height: 100vh;
+            background: white;
+            padding: 50px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .profile-content {
+            flex: 1;
+            max-width: 600px;
+            color: black;
+            padding: 20px;
+        }
+
+        .profile-box {
+            height: 500px;
+            width: 500px;
+            position: relative;
+            border-radius: 14px;
+            overflow: hidden;
+            transition: 0.3s ease all;
+            box-shadow: 0 5px 40px rgba(0, 0, 0, 0.5);
+            margin-right: 50px;
+        }
+
+        .profile-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 5px 80px rgba(0, 0, 0, 0.5);
+        }
+
+        .profile-box img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            display: block;
+            border-radius: 4px;
+            transition: 1s ease all;
+            object-fit: cover;
+        }
+
+        .profile-box:hover img {
+            transform: scale(1.25);
+        }
+
+        .profile-box .box-content {
+            color: white;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            z-index: 999;
+            padding: 5px 20px 0px;
+            background: rgba(0, 0, 0, 0.5);
+            transition: 0.3s ease all;
+        }
+
+        .profile-box:hover .box-content {
+            padding-bottom: 40px;
+            padding-top: 40px;
+        }
+
+        .bio-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s ease;
+        }
+
+        .bio-item:hover {
+            transform: translateX(10px);
+            background: rgba(204, 196, 196, 0.2);
+        }
+
+        .bio-label {
+            font-weight: 600;
+            color: black;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .bio-value {
+            color: black;
+        }
+
+        .upload-section {
+            background: black;
+            padding: 50px 20px;
+            min-height: 100vh;
+        }
+
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: black;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-title {
+            text-align: center;
+            color: #4568DC;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #4568DC;
+            outline: none;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #4568DC, #B06AB3);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(69, 104, 220, 0.3);
+        }
+
+        @media (max-width: 1200px) {
+            .profile-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .profile-box {
+                width: 350px;
+                height: 350px;
+                margin: 0 auto;
+            }
+        }
     </style>
 </head>
 <body>
-    <div id='scene'>
-        <div class='key' data-letter="H" style='--seed: 0.1;'>
-            <div class='bottom'></div>
-            <div class='side-front'></div>
-            <div class='side-back'></div>
-            <div class='side-left'></div>
-            <div class='side-right'></div>
-            <div class='face'>H</div>
-        </div>
-        <div class='key' data-letter="E" style='--seed: 0.2;'>
-            <div class='bottom'></div>
-            <div class='side-front'></div>
-            <div class='side-back'></div>
-            <div class='side-left'></div>
-            <div class='side-right'></div>
-            <div class='face'>E</div>
-        </div>
-        <div class='key' data-letter="L" style='--seed: 0.3;'>
-            <div class='bottom'></div>
-            <div class='side-front'></div>
-            <div class='side-back'></div>
-            <div class='side-left'></div>
-            <div class='side-right'></div>
-            <div class='face'>L</div>
-        </div>
-        <div class='key' data-letter="L2" style='--seed: 0.4;'>
-            <div class='bottom'></div>
-            <div class='side-front'></div>
-            <div class='side-back'></div>
-            <div class='side-left'></div>
-            <div class='side-right'></div>
-            <div class='face'>L</div>
-        </div>
-        <div class='key' data-letter="O" style='--seed: 0.5;'>
-            <div class='bottom'></div>
-            <div class='side-front'></div>
-            <div class='side-back'></div>
-            <div class='side-left'></div>
-            <div class='side-right'></div>
-            <div class='face'>O</div>
+    
+
+    <div class="hello-section">
+        <div id='scene'>
+            <div class='key' data-letter="H" style='--seed: 0.1;'>
+                <div class='bottom'></div>
+                <div class='side-front'></div>
+                <div class='side-back'></div>
+                <div class='side-left'></div>
+                <div class='side-right'></div>
+                <div class='face'>H</div>
+            </div>
+            <div class='key' data-letter="E" style='--seed: 0.2;'>
+                <div class='bottom'></div>
+                <div class='side-front'></div>
+                <div class='side-back'></div>
+                <div class='side-left'></div>
+                <div class='side-right'></div>
+                <div class='face'>E</div>
+            </div>
+            <div class='key' data-letter="L" style='--seed: 0.3;'>
+                <div class='bottom'></div>
+                <div class='side-front'></div>
+                <div class='side-back'></div>
+                <div class='side-left'></div>
+                <div class='side-right'></div>
+                <div class='face'>L</div>
+            </div>
+            <div class='key' data-letter="L2" style='--seed: 0.4;'>
+                <div class='bottom'></div>
+                <div class='side-front'></div>
+                <div class='side-back'></div>
+                <div class='side-left'></div>
+                <div class='side-right'></div>
+                <div class='face'>L</div>
+            </div>
+            <div class='key' data-letter="O" style='--seed: 0.5;'>
+                <div class='bottom'></div>
+                <div class='side-front'></div>
+                <div class='side-back'></div>
+                <div class='side-left'></div>
+                <div class='side-right'></div>
+                <div class='face'>O</div>
+            </div>
         </div>
     </div>
+
+    <!-- Profile Section -->
+    <section class="profile-section">
+        <div class="profile-content">
+            <div class="bio-item">
+                <span class="bio-label">Name</span>
+                <span class="bio-value">Ashwani Ashish</span>
+            </div>
+            <div class="bio-item">
+                <span class="bio-label">Date of Birth</span>
+                <span class="bio-value">01/01/1999</span>
+            </div>
+            <div class="bio-item">
+                <span class="bio-label">Height</span>
+                <span class="bio-value">167.6cms (5feet & 5 inch)</span>
+            </div>
+            <div class="bio-item">
+                <span class="bio-label">Complexion</span>
+                <span class="bio-value">Fair</span>
+            </div>
+            <div class="bio-item">
+                <span class="bio-label">Occupation</span>
+                <span class="bio-value">Designing Engineer at Avonic Robotics company in Hyderabad (B.Tech in Mechanical from CMR College, Hyderabad)</span>
+            </div>
+            <div class="bio-item">
+                <span class="bio-label">Father's Name</span>
+                <span class="bio-value">Gorakh Nath Pandit</span>
+            </div>
+            <div class="bio-item">
+                <span class="bio-label">Father's Occupation</span>
+                <span class="bio-value">Working in Indian Airforce</span>
+            </div>
+            <div class="bio-item">
+                <span class="bio-label">Mother's Name</span>
+                <span class="bio-value">Rumkini Kumari</span>
+            </div>
+            <div class="bio-item">
+                <span class="bio-label">Mother's Occupation</span>
+                <span class="bio-value">House Wife</span>
+            </div>
+            <div class="bio-item">
+                <span class="bio-label">First Younger Sister</span>
+                <span class="bio-value">Doing Master's in Information Technology (IT)
+                </span>
+            </div>
+            <div class="bio-item">
+                <span class="bio-label">Second Younger Sister</span>
+                <span class="bio-value">Doing preparation of IIT</span>
+            </div>
+        </div>
+
+        <div class="profile-box">
+            <img src="./image.png" alt="Ashwani Ashish">
+            <div class="box-content">
+                <h3>Ashwani Ashish</h3>
+            </div>
+        </div>
+    </section>
+
+    
 
     <script>
         const keys = document.querySelectorAll('.key');
